@@ -26,74 +26,6 @@ setInterval(countdown, 1000);
 
 
 
-
-
-
-// Função para envio de formulário
-const form = document.getElementById("confirmation-form");
-const message = document.getElementById("confirmation-message");
-
-form.addEventListener("submit", (e) => {
-    e.preventDefault();
-
-    const name = document.getElementById("name").value.trim();
-    const attendance = document.getElementById("attendance").value;
-
-    if (!name || !attendance) {
-        message.textContent = "Por favor, preencha todos os campos.";
-        message.style.color = "red";
-        message.classList.remove("hidden");
-        return;
-    }
-
-    // Dados a serem enviados
-    const data = { name, attendance };
-
-    // URL do Google Apps Script
-    const scriptURL = "https://script.google.com/macros/s/AKfycbyIFBKEt8YvBtmWqhWVTU_BqqoX1MHpYmoKC-4bjgJYdmyKUw30WT1Cbirm7E6dN0cVXg/exec";
-
-    fetch(scriptURL, {
-        method: "POST",
-        body: JSON.stringify(data),
-        headers: { "Content-Type": "application/json" },
-        
-    })
-        .then((response) => {
-            if (response.ok) {
-                message.textContent = "Confirmação enviada com sucesso!";
-                message.style.color = "green";
-                form.reset();
-            } else {
-                message.textContent = "Erro ao enviar a confirmação. Tente novamente.";
-                message.style.color = "red";
-            }
-            message.classList.remove("hidden");
-        })
-        .catch((error) => {
-            console.error("Erro:", error);
-            message.textContent = "Erro ao enviar os dados.";
-            message.style.color = "red";
-            message.classList.remove("hidden");
-        });
-});
-
-
-
-// Controle de áudio do vídeo
-// const video = document.getElementById("background-video");
-// const muteButton = document.getElementById("mute-button");
-
-// muteButton.addEventListener("click", () => {
-//     if (video.muted) {
-//         video.muted = false;
-//         muteButton.textContent = "🔊";
-//     } else {
-//         video.muted = true;
-//         muteButton.textContent = "🔈";
-//     }
-// });
-
-
 const video = document.getElementById("background-video");
 const muteButton = document.getElementById("mute-toggle");
 
@@ -132,3 +64,61 @@ muteButton.addEventListener("click", () => {
     muteButton.textContent = "🔈"; // Ícone de som desativado
   }
 });
+
+
+
+//Formulario
+
+
+const form = document.getElementById("confirmation-form");
+const message = document.getElementById("confirmation-message");
+
+form.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const attendance = document.getElementById("attendance").value;
+
+    if (!name || !attendance) {
+        message.textContent = "Por favor, preencha todos os campos.";
+        message.style.color = "red";
+        message.classList.remove("hidden");
+        return;
+    }
+
+    // Dados a serem enviados
+    const data = { name, attendance };
+
+    // URL do Google Apps Script
+    const scriptURL = "https://script.google.com/macros/s/AKfycbzjuzZLpTwNxOeuC7dadM5WSOHt88HKr3DxlGHTveHsB-A-N-qaAasGPoFkA7fpBQeOvw/exec"; // Coloque aqui o URL correto do Apps Script
+
+    fetch(scriptURL, {
+        method: "POST",
+        body: JSON.stringify(data),
+        headers: { "Content-Type": "application/json" },
+    })
+        .then((response) => {
+            if (response.ok) {
+                message.textContent = "Confirmação enviada com sucesso!";
+                message.style.color = "green";
+                form.reset();
+            } else {
+                message.textContent = "Erro ao enviar a confirmação. Tente novamente.";
+                message.style.color = "red";
+            }
+            message.classList.remove("hidden");
+        })
+        .catch((error) => {
+            console.error("Erro:", error);
+            message.textContent = "Erro ao enviar os dados.";
+            message.style.color = "red";
+            message.classList.remove("hidden");
+        });
+});
+
+
+
+
+
+
+
