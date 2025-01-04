@@ -50,7 +50,7 @@ form.addEventListener("submit", (e) => {
     const data = { name, attendance };
 
     // URL do Google Apps Script
-    const scriptURL = "https://script.google.com/macros/s/AKfycbwNVEfVrzkvSQcPCEhenAPIEBEmCZAg7-ghcUiRQSB-GOLLr1N8bZScRRuHrzOJw7XRTQ/exec";
+    const scriptURL = "https://script.google.com/macros/s/AKfycbyIFBKEt8YvBtmWqhWVTU_BqqoX1MHpYmoKC-4bjgJYdmyKUw30WT1Cbirm7E6dN0cVXg/exec";
 
     fetch(scriptURL, {
         method: "POST",
