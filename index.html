@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Convite Davi Lucca</title>
+</head>
+
+<body>
+    <main>
+        <video id="background-video" autoplay playsinline muted loop class="background-video">
+            <source src="img/homem aranha 23mb.mp4" type="video/mp4">
+            Seu navegador não suporta a tag de vídeo.
+        </video>
+
+        <button id="mute-toggle" class="mute-button">🔈</button>
+
+        <div class="content">
+            <div class="presentation">
+                <h2>🎉🕸️ <span class="underline">Contagem Regressiva</span> Davi Lucca faz 6 anos!!! 🕸️🎉</h2>
+                <p>Queridos amigos e familiares,</p>
+                <p>
+                    É com muita alegria que convidamos vocês para comemorar o
+                    <span class="underline">6º aniversário do Davi Lucca</span>! 🥳
+                    Ele está super animado com o tema <span class="underline">Homem-Aranha</span>,
+                    e a festa promete ser uma verdadeira aventura cheia de diversão!
+                </p>
+                <p>📅 <span class="underline">Data:</span> 15-03-2025<br>
+                    ⏰ <span class="underline">Horário:</span> 19:00h<br>
+                    📍 <span>Local:</span> <a class="endress" href="https://maps.app.goo.gl/3esQH2DcuWCY55Hg9">
+                        Buffet Casa da Alegria - R. Marquês de Recife, 239 - Parque São Luis, São Paulo
+                        - SP, 02841-010</a>
+                </p>
+                <section>
+                    <div class="text">
+                        <h2>Faltam</h2>
+                    </div>
+                    <div class="countdown">
+                        <div class="box">
+                            <span class="value" data-days>00</span>
+                            <span class="name">dias</span>
+                        </div>
+                        <div class="box">
+                            <span class="value" data-hours>00</span>
+                            <span class="name">horas</span>
+                        </div>
+                        <div class="box">
+                            <span class="value" data-minutes>00</span>
+                            <span class="name">minutos</span>
+                        </div>
+                        <div class="box">
+                            <span class="value" data-seconds>00</span>
+                            <span class="name">segundos</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+        <div class="confirmation-space">
+            <form id="confirmation-form">
+                <input type="text" id="name" placeholder="Digite seu nome" required>
+                <select id="attendance" required>
+                    <option value="">Escolha uma opção</option>
+                    <option value="present">Confirmar Presença</option>
+                    <option value="absent">Confirmar Ausência</option>
+                </select>
+                <button type="submit">Enviar</button>
+            </form>
+
+            <div id="confirmation-message" class="hidden"></div>
+        </div>
+    </main>
+</body>
+<script src="script.js" defer></script>
+
+</html>
