@@ -90,7 +90,7 @@ form.addEventListener("submit", (e) => {
     const data = { name, attendance };
 
     // URL do Google Apps Script
-    const scriptURL = "https://script.google.com/macros/s/AKfycbzjuzZLpTwNxOeuC7dadM5WSOHt88HKr3DxlGHTveHsB-A-N-qaAasGPoFkA7fpBQeOvw/exec"; // Coloque aqui o URL correto do Apps Script
+    const scriptURL = "https://script.google.com/macros/s/AKfycbxPzGYjSP8b1_-4dt-eDzeTX4qwzea7-UiZWOPFFUckMQzNRkM1O_MLetW0tPfWU50/exec"; // Coloque aqui o URL correto do Apps Script
 
     fetch(scriptURL, {
         method: "POST",
